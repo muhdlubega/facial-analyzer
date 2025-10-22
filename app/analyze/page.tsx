@@ -66,7 +66,7 @@ export default function AnalyzePage() {
   return (
     <main className="min-h-screen bg-background py-8">
       <div className="container mx-auto px-4 max-w-6xl">
-        <Button variant="ghost" onClick={() => router.push("/")} className="mb-6">
+        <Button variant="ghost" onClick={() => router.push("/")} className="cursor-pointer mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </Button>
@@ -113,10 +113,10 @@ export default function AnalyzePage() {
 
             {results && (
               <div className="flex gap-3 mt-6">
-                <Button onClick={handleReset} variant="outline" className="flex-1 bg-transparent">
+                <Button onClick={handleReset} variant="outline" className="cursor-pointer flex-1 bg-transparent">
                   Analyze Again
                 </Button>
-                <Button onClick={() => router.push("/")} variant="default" className="flex-1 bg-primary">
+                <Button onClick={() => router.push("/")} variant="default" className="cursor-pointer flex-1 bg-primary">
                   New Image
                 </Button>
               </div>

@@ -51,18 +51,23 @@ const response = await fetch(resolvedUrl)
 {
   "ancestry": [
     {"region": "Region Name", "percentage": number},
-    ... (5 items total, percentages are separate for each item depending on the accuracy)
+    ... (Up to 10 items total, percentages are separate for each item depending on the accuracy, where the highest likely match nearing 80-100%)
+  ],
+  "origin": [
+    {"country": "Country of Origin", "percentage": number},
+    ... (Up to 10 items total, percentages are separate for each item depending on the accuracy, where the highest likely match nearing 80-100%)
   ],
   "emotions": [
     {"emotion": "Emotion Name", "percentage": number},
-    ... (5 items total, percentages are separate for each item depending on the accuracy)
+    ... (Up to 10 items total, percentages are separate for each item depending on the accuracy, where the highest likely match nearing 80-100%)
   ],
   "description": string
 }
 
-For ancestry, identify the top 5 most likely country of origins based on facial features (e.g., "Malaysian", "Chinese", "Japanese", "German", "American").
+For ancestry, identify the top 5 most likely geographic/ethnic origins based on facial features (e.g., "East Asian", "Northern European", "West African", "South Asian", "Mediterranean").
+For origin, identify the top 5 most likely country of origins based on facial features (e.g., "Malaysian", "Chinese", "Japanese", "German", "American").
 For emotions, identify the top 5 emotions expressed (e.g., "Happy", "Neutral", "Surprised", "Thoughtful", "Confident").
-For description, summarize the facial features to highlight the geographic, ethnic aspects and describe the facial features related to the emotion expressed in not less than 3 sentences.`,
+For description, summarize the facial features to highlight the geographic, ethnic aspects and describe the facial features related to the emotion expressed in not less than 3 sentences. Also mention if the person has traits of any mixed or non-mixed races/ethnic origins.`,
             },
             {
               type: "image_url",

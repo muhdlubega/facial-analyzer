@@ -17,7 +17,7 @@ const nextConfig = {
         hostname: 'example.com',
       },
     ],
-    unoptimized: true, // if using static exports or remote non-optimized images
+    unoptimized: true,
   },
 }
 

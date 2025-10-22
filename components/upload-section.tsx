@@ -106,10 +106,11 @@ export function UploadSection() {
                     setSelectedFile(null)
                     sessionStorage.removeItem("uploadedImage")
                   }}
+                  className="cursor-pointer"
                 >
                   Remove
                 </Button>
-                <Button onClick={handleAnalyze} className="bg-primary hover:bg-primary/90">
+                <Button onClick={handleAnalyze} className="cursor-pointer bg-primary hover:bg-primary/90">
                   Analyze This Photo
                 </Button>
               </div>
@@ -122,7 +123,7 @@ export function UploadSection() {
               <div>
                 <p className="text-lg font-medium mb-2">
                   Drop your image here, or{" "}
-                  <button onClick={() => fileInputRef.current?.click()} className="text-primary hover:underline">
+                  <button onClick={() => fileInputRef.current?.click()} className="cursor-pointer text-primary hover:underline">
                     browse
                   </button>
                 </p>

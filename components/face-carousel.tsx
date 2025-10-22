@@ -55,7 +55,7 @@ export function FaceCarousel() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-lg"
+        className="cursor-pointer absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-lg"
         onClick={scrollPrev}
       >
         <ChevronLeft className="w-4 h-4" />
@@ -79,7 +79,7 @@ export function FaceCarousel() {
                   priority={face.id <= 3}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                  <Button className="bg-primary hover:bg-primary/90">Analyze Face</Button>
+                  <Button className="cursor-pointer bg-primary hover:bg-primary/90">Analyze Face</Button>
                 </div>
               </div>
             </Card>
@@ -90,7 +90,7 @@ export function FaceCarousel() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-lg"
+        className="cursor-pointer absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-lg"
         onClick={scrollNext}
       >
         <ChevronRight className="w-4 h-4" />
