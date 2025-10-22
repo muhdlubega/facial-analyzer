@@ -5,14 +5,16 @@ import type React from "react"
 import { useState, useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Upload } from "lucide-react"
+import { Upload, Camera } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import { WebcamCapture } from "./webcam-capture"
 
 export function UploadSection() {
   const [dragActive, setDragActive] = useState(false)
   const [preview, setPreview] = useState<string | null>(null)
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [showWebcam, setShowWebcam] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
 
@@ -49,6 +51,17 @@ export function UploadSection() {
       setPreview(blobUrl)
       setSelectedFile(file)
     }
+  }
+
+  const handleWebcamCapture = (imageData: string) => {
+    setPreview(imageData)
+    fetch(imageData)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const file = new File([blob], "webcam-capture.jpg", { type: "image/jpeg" })
+        setSelectedFile(file)
+      })
+    setShowWebcam(false)
   }
 
   const handleAnalyze = () => {
@@ -129,10 +142,22 @@ export function UploadSection() {
                 </p>
                 <p className="text-sm text-muted-foreground">Supports: JPG, PNG, WEBP (Max 10MB)</p>
               </div>
+              <div className="flex gap-3 justify-center pt-4">
+                <Button onClick={() => fileInputRef.current?.click()} variant="outline" className="cursor-pointer gap-2">
+                  <Upload className="w-4 h-4" />
+                  Upload Photo
+                </Button>
+                <Button onClick={() => setShowWebcam(true)} className="cursor-pointer bg-primary hover:bg-primary/90 gap-2">
+                  <Camera className="w-4 h-4" />
+                  Take a Photo
+                </Button>
+              </div>
             </div>
           )}
         </div>
       </Card>
+
+      <WebcamCapture open={showWebcam} onClose={() => setShowWebcam(false)} onCapture={handleWebcamCapture} />
     </div>
   )
 }
