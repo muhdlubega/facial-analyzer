@@ -95,7 +95,7 @@ export default function AnalyzePage() {
               <Button
                 onClick={handleAnalyze}
                 disabled={isAnalyzing}
-                className="w-full mt-6 bg-primary hover:bg-primary/90 h-12 text-base"
+                className="cursor-pointer w-full mt-6 bg-primary hover:bg-primary/90 h-12 text-base"
               >
                 {isAnalyzing ? (
                   <>
