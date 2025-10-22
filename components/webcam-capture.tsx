@@ -94,14 +94,14 @@ export function WebcamCapture({ open, onClose, onCapture }: WebcamCaptureProps) 
           )}
 
           <div className="flex gap-3 justify-center">
-            <Button variant="outline" onClick={handleClose} className="gap-2 bg-transparent">
+            <Button variant="outline" onClick={handleClose} className="cursor-pointer gap-2 bg-transparent">
               <X className="w-4 h-4" />
               Cancel
             </Button>
             <Button
               onClick={capturePhoto}
               disabled={!!error || !stream}
-              className="bg-primary hover:bg-primary/90 gap-2"
+              className="cursor-pointer bg-primary hover:bg-primary/90 gap-2"
             >
               <Camera className="w-4 h-4" />
               Capture Photo
