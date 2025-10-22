@@ -40,7 +40,7 @@ export function WebcamCapture({ open, onClose, onCapture }: WebcamCaptureProps) 
       }
       setError(null)
     } catch (err) {
-      console.error("[v0] Error accessing camera:", err)
+      console.error("Error accessing camera:", err)
       setError("Unable to access camera. Please check your permissions.")
     }
   }
